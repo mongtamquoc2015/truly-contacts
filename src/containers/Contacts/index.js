@@ -4,7 +4,6 @@ import { GlobalContext } from '../../context';
 
 const ContactContainer = () => {
 	const context = useContext(GlobalContext);
-	console.log('context', context);
 	return (
 		<>
 			<Header />
@@ -13,4 +12,4 @@ const ContactContainer = () => {
 	)
 }
 
-export default ContactContainer
+export default ContactContainer;
