@@ -19,7 +19,7 @@ export const register = (fields) => {
 			.catch((err) => {
 				dispatch({
 					type: REGISTER_ERROR,
-					payload: err.response.data
+					payload: err.response ? err.response.data : "COULD NOT CONNECT"
 				});
 			});
 	}

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import RegisterUI from '../../layout/Register';
-import useForm from './useForm';
+import useRegisterForm from './useRegisterForm';
 
 const RegisterContainer = () => {
 	useEffect(() => {
 
 	}, []);
 
-	return <RegisterUI {...useForm()} />
+	return <RegisterUI {...useRegisterForm()} />
 }
 
 export default RegisterContainer;

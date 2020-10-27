@@ -1,10 +1,12 @@
-export default {
+const contactsInitial = {
 	contacts: {
 		isLoading: false,
-		isError: false,
+		error: false,
 	},
 	addContacts: {
 		isLoading: false,
-		isError: false,
+		error: false,
 	},
 };
+
+export default contactsInitial;

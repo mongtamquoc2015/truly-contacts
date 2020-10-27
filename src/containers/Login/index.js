@@ -1,15 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { Header } from '../../components';
+import React from 'react';
+import LoginUI from '../../layout/Login';
+import useLoginForm from './useLoginForm';
 
 const LoginContainer = () => {
-	return (
-		<div>
-			<Header />
-			<h1>Login</h1>
-			<Link to="/auth/register">Register</Link>
-		</div>
-	)
+	return <LoginUI {...useLoginForm()} />
 }
 
 export default LoginContainer;

@@ -3,14 +3,14 @@ import { register } from '../../context/actions/auth/register';
 import { GlobalContext } from '../../context';
 import { useHistory } from 'react-router-dom';
 
-const useForm = () => {
+const useRegisterForm = () => {
 	const [fields, setFields] = useState({});
 	const [fieldErrors, setFieldErrors] = useState({});
 
 	const { authDispatch, authState: {
 		auth: {
 			isLoading,
-			isError,
+			error,
 			data
 		} }
 	} = useContext(GlobalContext);
@@ -21,24 +21,18 @@ const useForm = () => {
 		if (data) {
 			history.push('/auth/login');
 		}
-	}, [data]);
+	}, [history, data]);
 
 	useEffect(() => {
-		if (isError) {
-			for (const key in isError) {
+		if (error) {
+			for (const key in error) {
 				setFieldErrors({
 					...fieldErrors,
-					[key]: isError[key][0]
+					[key]: error[key][0]
 				});
 			}
 		}
-	}, [isError]);
-
-	console.log('isLoading', isLoading);
-	console.log('isError', isError);
-	console.log('errorType', typeof isError);
-	console.log('data', data);
-	console.log('fieldErrors', fieldErrors);
+	}, [error, fieldErrors]);
 
 	const onChange = (e, { name, value }) => {
 		setFields({ ...fields, [name]: value });
@@ -60,4 +54,4 @@ const useForm = () => {
 	return { fields, isValid, isLoading, fieldErrors, onSubmit, onChange };
 }
 
-export default useForm;
+export default useRegisterForm

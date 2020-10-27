@@ -1,8 +1,9 @@
-export default {
+const authInitial = {
 	auth: {
 		isLoading: false,
-		user: null,
-		isError: false,
+		error: false,
 		data: null
 	},
 };
+
+export default authInitial;
