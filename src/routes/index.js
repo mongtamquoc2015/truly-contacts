@@ -8,25 +8,29 @@ const routes = [
 		id: uuidv4(),
 		path: '/auth/register',
 		component: RegisterContainer,
-		title: 'Register'
+		title: 'Register',
+		isNeedsAuth: false
 	},
 	{
 		id: uuidv4(),
 		path: '/auth/login',
 		component: LoginContainer,
-		title: 'Login'
+		title: 'Login',
+		isNeedsAuth: false
 	},
 	{
 		id: uuidv4(),
 		path: '/',
 		component: ContactsContainer,
-		title: 'Contacts'
+		title: 'Contacts',
+		isNeedsAuth: true
 	},
 	{
 		id: uuidv4(),
 		path: '/contacts/create',
 		component: CreateContactContaienr,
-		title: 'Create Contact'
+		title: 'Create Contact',
+		isNeedsAuth: true
 	}
 ];
 
