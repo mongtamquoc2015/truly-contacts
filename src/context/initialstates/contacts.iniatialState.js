@@ -1,10 +1,10 @@
 export default {
 	contacts: {
-		loading: false,
-		error: null,
+		isLoading: false,
+		isError: false,
 	},
 	addContacts: {
-		loading: false,
-		error: null,
+		isLoading: false,
+		isError: false,
 	},
 };

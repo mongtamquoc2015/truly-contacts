@@ -1,2 +1,2 @@
-export {default as auth} from './auth.reducer';
-export {default as contacts} from './contacts.reducer';
+export {default as authReducer} from './auth.reducer';
+export {default as contactsReducer} from './contacts.reducer';
