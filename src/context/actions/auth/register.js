@@ -1,10 +1,10 @@
 import { REGISTER_ERROR, REGISTER_LOADING, REGISTER_SUCCESS } from '../../../constants/actionTypes';
-import axiosInstance from '../../../helpers/axios';
+import axiosInstance from '../../../helpers/axiosInstance';
 
 export const register = (fields) => {
 	return dispatch => {
 		dispatch({ type: REGISTER_LOADING });
-		axiosInstance
+		axiosInstance()
 			.post('/auth/register', {
 				...fields,
 				last_name: fields.lastName,

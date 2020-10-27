@@ -1,11 +1,11 @@
 import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS } from '../../../constants/actionTypes';
-import axiosInstance from '../../../helpers/axios';
+import axiosInstance from '../../../helpers/axiosInstance';
 
 export const login = (fields) => {
 	return async (dispatch) => {
 		dispatch({ type: LOGIN_LOADING });
 		try {
-			const loginResponse = await axiosInstance.post('/auth/login', fields);
+			const loginResponse = await axiosInstance().post('/auth/login', fields);
 			localStorage.token = loginResponse.data.token;
 			dispatch({
 				type: LOGIN_SUCCESS,
