@@ -1,5 +1,8 @@
-import { CONTACTS_LOADING, CONTACTS_LOAD_ERROR, CONTACTS_LOAD_SUCCESS } from "../../constants/actionTypes";
+import {
+	CONTACTS_LOADING, CONTACTS_LOAD_ERROR, CONTACTS_LOAD_SUCCESS, LOGOUT_USER
+} from "../../constants/actionTypes";
 import contacts from '../../data/contacts.json';
+import contactsInitialState from '../initialstates/contacts.iniatialState';
 
 const contactsReducer = (state, { payload, type }) => {
 	switch (type) {
@@ -28,6 +31,11 @@ const contactsReducer = (state, { payload, type }) => {
 					isLoading: false,
 					error: payload
 				}
+			}
+		case LOGOUT_USER:
+			return {
+				...state,
+				contactsInitialState
 			}
 		default:
 			return state;

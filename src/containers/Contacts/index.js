@@ -12,7 +12,7 @@ const ContactContainer = () => {
 
 	useEffect(() => {
 		getContacts(history)(contactsDispatch);
-	}, []);
+	}, [history, contactsDispatch]);
 
 	return <ContactsListUI {...contactsState.contacts} />
 }
