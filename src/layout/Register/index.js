@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
 	Button,
 	Form,
@@ -93,6 +94,10 @@ const RegisterUI = ({ fields, onChange, isValid, onSubmit, isLoading, fieldError
 							>
 								Submit
               </Button>
+							<Segment>
+								Already have an account ?
+							<Link to="/auth/login">Login here</Link>
+							</Segment>
 						</Form>
 					</Segment>
 				</Grid.Column>
