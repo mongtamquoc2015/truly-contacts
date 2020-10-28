@@ -1,23 +1,20 @@
 import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import Header from '../../components/Header';
 import { GlobalContext } from '../../context';
 import getContacts from '../../context/actions/contacts/getContacts';
+import ContactsListUI from '../../layout/Contacts/List';
 
 const ContactContainer = () => {
-	const context = useContext(GlobalContext);
+	const { contactsDispatch, contactsState } = useContext(GlobalContext);
 	const history = useHistory();
 
+	console.log('contactsState', contactsState.contacts);
+
 	useEffect(() => {
-		getContacts(history);
+		getContacts(history)(contactsDispatch);
 	}, []);
 
-	return (
-		<>
-			<Header />
-			<h1>Contacts</h1>
-		</>
-	)
+	return <ContactsListUI {...contactsState.contacts} />
 }
 
 export default ContactContainer;

@@ -2,6 +2,7 @@ const contactsInitial = {
 	contacts: {
 		isLoading: false,
 		error: false,
+		data: [],
 	},
 	addContacts: {
 		isLoading: false,
